@@ -3,9 +3,7 @@ var helpers = require('./helpers');
 module.exports = (m3u8Path) => {
 
     var startTime = Date.now();
-    var gear1 = m3u8Path;
-    // gear1 = __dirname + '/../p2p-live-cdn-cache/cache/http___qthttp_apple_com_edgesuite_net_1010qwoeiuryfg_1240_vod_m3u8'
-    var playlistInfo = helpers.getSegmentsDuration(gear1);
+    var playlistInfo = helpers.getSegmentsDuration(m3u8Path);
 
     return {
         getPlayList: (id) => {

@@ -1,11 +1,26 @@
 var express = require('express');
 var fs = require('fs');
+var winston = require('winston');
+var expressWinston = require('express-winston');
 var app = express();
 var helpers = require('./helpers');
 var gear1 = __dirname + "/public/bipbop_4x3/gear1/prog_index.m3u8";
 var startTime = Date.now();
 var playlistInfo = helpers.getSegmentsDuration(gear1);
 var isVOD = false;
+
+app.use(expressWinston.logger({
+      transports: [
+        new winston.transports.Console({
+          json: false,
+          colorize: true
+        })
+      ],
+      meta: false, // optional: control whether you want to log the meta data about the request (default to true)
+      msg: "HTTP {{req.method}} {{req.url}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"
+      expressFormat: true, // Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors with colorize set to true
+      colorize: true, // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
+    }));
 
 app.use(express.static(__dirname + '/public'));
 
