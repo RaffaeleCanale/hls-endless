@@ -45,7 +45,6 @@
     "commander": "^2.3.0",
     "express": "^4.9.5",
     "express-winston": "^2.1.2",
-    "pm2": "^0.10.8",
     "winston": "^2.3.0"
   }
 }
