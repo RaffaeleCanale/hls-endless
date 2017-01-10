@@ -23,8 +23,6 @@ app.use(expressWinston.logger({
       colorize: true, // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
     }));
 
-app.use(express.static(__dirname + '/public/bipbop_4x3/gear1/'));
-
 process.on('SIGUSR2', function(){
   isVOD = false;
 });
@@ -33,10 +31,12 @@ process.on('SIGUSR1', function(){
   isVOD = true;
 });
 
-app.get('/playlist.m3u8', function(req, res, next){
+app.get('/' + playlistName, function(req, res, next){
   res.contentType('application/vnd.apple.mpegurl');
   res.send(library.getPlayList());
 });
+
+app.use(express.static(path));
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
