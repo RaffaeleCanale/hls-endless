@@ -6,7 +6,7 @@ var expressWinston = require('express-winston');
 
 var path = process.argv[2] || __dirname + '/public/bipbop_4x3/gear1/'
 var playlistName = process.argv[3] || 'prog_index.m3u8'
-var library = require('./library')(path + playlistName)
+var library = require('./index')(path + playlistName)
 
 var app = express();
 
