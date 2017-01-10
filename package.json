@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": " ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --default-excludes=./test --reporter=lcov",
-    "start": "node app.js",
+    "start": "node app.js"
   },
   "bin": {
     "hls-endless": "./bin/hls-endless"
