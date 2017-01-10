@@ -4,12 +4,12 @@
 #EXT-X-MEDIA-SEQUENCE:0
 #EXT-X-PLAYLIST-TYPE:VOD
 #EXTINF:1.0,	
-fileSequence0.aac
+segment_0.aac
 #EXTINF:1.1,	
-fileSequence1.aac
+segment_1.aac
 #EXTINF:1.2,	
-fileSequence2.aac
+segment_2.aac
 #EXTINF:1.3,	
-fileSequence3.aac
+segment_3.aac
 #EXTINF:1.4,	
-fileSequence4.aac
+segment_4.aac

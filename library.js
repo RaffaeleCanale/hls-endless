@@ -6,11 +6,7 @@ module.exports = (m3u8Path) => {
     var playlistInfo = helpers.getSegmentsDuration(m3u8Path);
 
     return {
-        getPlayList: (id) => {
-            // var id = parseInt(req.param('id'),10);
-            if (isNaN(id) || id > 4) {
-                throw new Error('id should be in [0,4]')
-            }
+        getPlayList: () => {
             var now = Date.now();
             var delta = (now - startTime) / 1000;
             var totalLoops = Math.floor(delta / playlistInfo.totalDuration);
@@ -25,7 +21,6 @@ module.exports = (m3u8Path) => {
                 if (deltaInLoop > 0) {
                     currentSegment++;
                 } else if (segments.length < helpers.maxSegmentsInPlaylist) {
-                    // videoPath = ",\n/bipbop_4x3/gear" + id + "/segment_" + i + (id != 0 ? ".ts" : ".aac");
                     videoPath = ',\n' + playlistInfo.names[i];
                     segments.push("#EXTINF:" + _segment + videoPath);
                 } else {
