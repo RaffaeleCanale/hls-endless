@@ -2,11 +2,11 @@ var express = require('express');
 var fs = require('fs');
 var winston = require('winston');
 var expressWinston = require('express-winston');
-
+var Library = require('./index')
 
 var path = process.argv[2] || __dirname + '/public/bipbop_4x3/gear1/'
 var playlistName = process.argv[3] || 'prog_index.m3u8'
-var library = require('./index')(path + playlistName)
+var library = new Library(path + playlistName)
 
 var app = express();
 
