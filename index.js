@@ -9,7 +9,7 @@ Library.prototype.restart = function () {
     this.startTime = Date.now()
 }
 
-Library.prototype.getPlayList = function () {
+Library.prototype.getPlaylist = function () {
     var now = Date.now();
     var delta = (now - this.startTime) / 1000;
     var totalLoops = Math.floor(delta / this.playlistInfo.totalDuration);

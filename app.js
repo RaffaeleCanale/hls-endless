@@ -33,7 +33,7 @@ process.on('SIGUSR1', function(){
 
 app.get('/' + playlistName, function(req, res, next){
   res.contentType('application/vnd.apple.mpegurl');
-  res.send(library.getPlayList());
+  res.send(library.getPlaylist());
 });
 
 app.use(express.static(path));
