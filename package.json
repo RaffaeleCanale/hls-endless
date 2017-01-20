@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": " ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --default-excludes=./test --reporter=lcov",
-    "start": "node app.js"
+    "start": "node app.js",
+    "local": "npm start ../p2p-live-cdn-cache/cache/ http___qthttp_apple_com_edgesuite_net_1010qwoeiuryfg_1240_vod_m3u8"
   },
   "bin": {
     "hls-endless": "./bin/hls-endless"
